@@ -70,8 +70,8 @@
 
 			var l=document.getElementById('lat').value;
 			var lan=document.getElementById('lng').value;
-			l=parseInt(l);
-			lan=parseInt(lan);
+			l=parseFloat(l);
+			lan=parseFloat(lan);
 
 			var marker= new google.maps.Marker({
 				position:{lat:l,lng:lan},

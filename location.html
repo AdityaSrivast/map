@@ -7,18 +7,17 @@
 	<style>
 		input[type="text"]
 		{
-			padding: 10px 50px;
+			padding:10px 25% 10px ;
 			color: black;
 			background-color: white;
 			width: 50%;
+			text-align: left;
 
 		}
 		input[type="button"]
 		{
-			padding: 10px 50px;
+			padding: 10px 25%;
 			background-color: white;
-			font-weight: bold;
-			width:50%;
 		}
 		#map{
 			height: 400px;
@@ -26,9 +25,10 @@
 		}
 		#divmain
 		{
-
+			align-items: center;
 			margin-top: 5%;
 			margin-left: 25%;
+			margin-right: 25%;
 			background-color: rgb(240,246,252);
 		}
 		
@@ -40,16 +40,16 @@
 		<form id="formmain">
 			<input type="text" name="lat" id="lat" placeholder="Enter Latitude"><br>
 			<input type="text" name="lang" id="lng" placeholder="Enter Longitude"><br>
-			<input type="button" name="b1" id="b1" value="Get the Location" onclick="initMap()"><br><br>
+			<input type="button" name="b1" id="b1" value="Get the Location" onclick="initMap()">
 		</form>
-	</div>
+	</div><br><br>
 
 	<div id="map"></div>
 	<script>
 		function initMap()
 		{
 			var options={
-				zoom:8,
+				zoom:7,
 				center:{lat:12.9165,lng:79.1325}
 			}
 
@@ -73,17 +73,17 @@
 			l=parseInt(l);
 			lan=parseInt(lan);
 
-			var marker= new google.maps.Marker({
+			var marker1= new google.maps.Marker({
 				position:{lat:l,lng:lan},
 				map:map,
 				icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
 			});
-			var infoWindow = new google.maps.InfoWindow({
+			var infoWindow1 = new google.maps.InfoWindow({
 				content:'<h1>Requested Location</h1>'
 			});
 
-			marker.addListener('click',function(){
-				infoWindow.open(map,marker);
+			marker1.addListener('click',function(){
+				infoWindow.open(map,marker1);
 			});
 			document.getElementById('lat').value='';
 			document.getElementById('lng').value='';

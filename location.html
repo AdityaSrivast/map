@@ -73,17 +73,17 @@
 			l=parseInt(l);
 			lan=parseInt(lan);
 
-			var marker1= new google.maps.Marker({
+			var marker= new google.maps.Marker({
 				position:{lat:l,lng:lan},
 				map:map,
 				icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
 			});
-			var infoWindow1 = new google.maps.InfoWindow({
+			var infoWindow = new google.maps.InfoWindow({
 				content:'<h1>Requested Location</h1>'
 			});
 
-			marker1.addListener('click',function(){
-				infoWindow.open(map,marker1);
+			marker.addListener('click',function(){
+				infoWindow.open(map,marker);
 			});
 			document.getElementById('lat').value='';
 			document.getElementById('lng').value='';
